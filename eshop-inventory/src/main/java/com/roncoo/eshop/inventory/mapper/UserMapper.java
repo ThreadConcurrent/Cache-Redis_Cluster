@@ -9,6 +9,10 @@ import com.roncoo.eshop.inventory.model.User;
  */
 public interface UserMapper {
 
+    /**
+     * 查询用户信息
+     * @return
+     */
     public User findUserInfo();
 
 }

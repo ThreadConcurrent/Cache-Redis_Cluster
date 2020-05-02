@@ -31,7 +31,7 @@ public class UserController {
     }
 
     /**
-     * 从Redis Cluster缓存中获取用户信息
+     * 从缓存中获取用户信息
      * @return
      */
     @RequestMapping("/getCachedUserInfo")

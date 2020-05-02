@@ -3,6 +3,7 @@
 
 <mapper namespace="com.roncoo.eshop.inventory.mapper.UserMapper">
 
+    <!--查询用户信息-->
     <select id="findUserInfo" resultType="com.roncoo.eshop.inventory.model.User">
         select name,age from user;
     </select>

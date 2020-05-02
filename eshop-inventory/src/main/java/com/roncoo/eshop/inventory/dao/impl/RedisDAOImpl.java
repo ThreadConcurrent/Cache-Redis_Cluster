@@ -12,7 +12,7 @@ import javax.annotation.Resource;
  * @create 2020-04-27 16:20
  */
 @Repository("redisDAO")
-public class RedisDAPImpl implements RedisDAO{
+public class RedisDAOImpl implements RedisDAO {
 
     @Resource
     private JedisCluster jedisCluster;
@@ -25,5 +25,10 @@ public class RedisDAPImpl implements RedisDAO{
     @Override
     public String get(String key) {
         return jedisCluster.get(key);
+    }
+
+    @Override
+    public void delete(String key) {
+        jedisCluster.del(key);
     }
 }

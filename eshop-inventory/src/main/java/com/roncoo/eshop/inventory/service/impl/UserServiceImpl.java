@@ -5,6 +5,7 @@ import com.roncoo.eshop.inventory.dao.RedisDAO;
 import com.roncoo.eshop.inventory.mapper.UserMapper;
 import com.roncoo.eshop.inventory.model.User;
 import com.roncoo.eshop.inventory.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -28,6 +29,10 @@ public class UserServiceImpl implements UserService {
         return userMapper.findUserInfo();
     }
 
+    /**
+     * 从缓存中获取用户信息
+     * @return
+     */
     @Override
     public User getCachedUserInfo() {
         redisDAO.set("cached_user_lisi", "{\"name\": \"lisi\", \"age\":28}");
